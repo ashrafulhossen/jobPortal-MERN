@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.menu :where(li:not(.menu-title) > *:not(ul):not(details):not(.menu-title)),
+.menu :where(li:not(.menu-title) > details > summary:not(.menu-title)) {
+	padding: 0px;
+}
+
+:where(
+		.menu
+			li:not(.menu-title):not(.disabled)
+			> *:not(ul):not(details):not(.menu-title)
+	):not(.active):hover,
+:where(
+		.menu
+			li:not(.menu-title):not(.disabled)
+			> details
+			> summary:not(.menu-title)
+	):not(.active):hover {
+	background: transparent;
+	cursor: auto;
+}
+
+.navlink {
+	@apply text-lg py-2 px-4 w-full text-center lg:text-left transition-all duration-300 hover:text-primary;
+}
+.menu li > *:not(ul):not(details):active {
+	background-color: transparent;
+	color: #3d996e;
+}
