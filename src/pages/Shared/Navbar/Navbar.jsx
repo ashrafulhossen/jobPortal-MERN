@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
+import { FaUserCircle } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import logo from "/logo.png";
 
@@ -37,7 +38,7 @@ const Navbar = () => {
 					}
 					to={"/contact"}
 				>
-					Conatact Us
+					Contact Us
 				</NavLink>
 			</li>
 			<li>
@@ -65,17 +66,25 @@ const Navbar = () => {
 				</p>
 				<input
 					type="checkbox"
-					className="toggle checked:bg-primary checked:border-primary rounded-full"
+					className="toggle checked:bg-primary checked:border-primary rounded-full bg-green-200 shadow-green-200"
 					onChange={jobSeekerOrJobPosterEvent}
 				/>
 			</li>
-			<li>
-				<NavLink
+			<li className="flex items-center flex-row gap-2">
+				{/* <NavLink
 					className={`navlink  bg-primary hover:scale-110 hover:bg-primary text-white hover:text-white `}
 					to={"/authentication/login"}
 				>
 					Log In
-				</NavLink>
+				</NavLink> */}
+
+				{/* <img src={userImg} alt="user avatar" /> */}
+				<div>
+					<FaUserCircle className="w-7 h-7" />
+					<button className="navlink bg-primary text-white rounded-xl hover:text-white hover:scale-110">
+						Logout
+					</button>
+				</div>
 			</li>
 		</>
 	);
@@ -134,7 +143,7 @@ const Navbar = () => {
 						</ul>
 					</div>
 					<div className="navbar-end hidden lg:flex ">
-						<ul className="menu enu-horizontal flex-row gap-4">
+						<ul className="menu enu-horizontal flex-row gap-4 w-full justify-end">
 							{endMenuItems}
 						</ul>
 					</div>

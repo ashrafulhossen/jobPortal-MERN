@@ -7,6 +7,7 @@
 	padding: 0px;
 }
 
+
 :where(
 		.menu
 			li:not(.menu-title):not(.disabled)
@@ -27,5 +28,4 @@
 }
 .menu li > *:not(ul):not(details):active {
 	background-color: transparent;
-	color: #3d996e;
 }
